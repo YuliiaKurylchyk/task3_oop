@@ -1,5 +1,6 @@
 package com.kurylchyk.controller;
 import com.kurylchyk.model.*;
+import com.kurylchyk.view.PrintView;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -8,6 +9,8 @@ import java.util.TreeMap;
 public class FlowerStore {
 
     private Map<Flower, Double>  allFlowers = new LinkedHashMap<Flower, Double>();
+    private PrintView display = (value)->{
+        System.out.println(value); };
 
     FlowerStore() {
     setAllFlowers();
@@ -29,9 +32,11 @@ public class FlowerStore {
 
     public void showAvailableFlowers(){
         for(Map.Entry<Flower,Double> value: allFlowers.entrySet()){
-            System.out.println(value);
+            display.print(value.toString());
         }
     }
+
+
 
     public static void main(String[] args) {
         FlowerStore store = new FlowerStore();
