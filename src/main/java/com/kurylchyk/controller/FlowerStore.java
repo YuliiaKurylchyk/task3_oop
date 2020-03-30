@@ -2,9 +2,7 @@ package com.kurylchyk.controller;
 import com.kurylchyk.model.*;
 import com.kurylchyk.view.PrintView;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class FlowerStore {
 
@@ -31,15 +29,17 @@ public class FlowerStore {
     }
 
     public void showAvailableFlowers(){
+        int index = 0;
         for(Map.Entry<Flower,Double> value: allFlowers.entrySet()){
+            System.out.print(index++ + "\t");
             display.print(value.toString());
         }
     }
 
 
-
     public static void main(String[] args) {
         FlowerStore store = new FlowerStore();
         store.showAvailableFlowers();
+
     }
 }

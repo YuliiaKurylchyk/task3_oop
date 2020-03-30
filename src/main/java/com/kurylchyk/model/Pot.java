@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Pot {
 
-    enum Shape {
+   private enum Shape {
         ROUND,
         SQUARE,
         STEEP
     }
 
-    enum Color {
+  private  enum Color {
         GREEN,
         RED,
         WHITE,
@@ -25,7 +25,7 @@ public class Pot {
         setShape();
         setColor();
     }
-    void setShape(){
+   private void setShape(){
        sc = new Scanner(System.in);
         for(Shape s: Shape.values()) {
             System.out.println(s);
@@ -35,7 +35,7 @@ public class Pot {
         shape  = Shape.valueOf(answer.toUpperCase());
     }
 
-    void setColor(){
+  private  void setColor(){
         sc = new Scanner(System.in);
         for(Color c: Color.values()) {
             System.out.println(c);
@@ -43,5 +43,9 @@ public class Pot {
         System.out.println("Choose the color: ");
         String answer = sc.nextLine();
         color  = Color.valueOf(answer.toUpperCase());
+    }
+
+    public String toString(){
+        return shape + " " + color + " pot ";
     }
 }

@@ -2,7 +2,7 @@ package com.kurylchyk.model;
 
 public class Rose extends CommonFlower {
 
-    boolean hasPrickle;
+   private boolean hasPrickle;
 
    public  Rose(String sort, String name,String color,boolean hasPrickle){
         super(sort,name,color);
